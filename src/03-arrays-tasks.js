@@ -374,7 +374,7 @@ function getItemsSum(arr) {
 function getFalsyValuesCount(arr) {
   const farr = [];
   for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i] === false || arr[i] === null || NaN !== NaN) {
+    if (arr[i] === false || arr[i] === null) {
       farr.push(arr[i]);
     }
   }
@@ -410,8 +410,8 @@ function findAllOccurences(/* arr, item */) {
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join();
 }
 
 
