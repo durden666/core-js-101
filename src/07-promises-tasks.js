@@ -30,6 +30,8 @@
  */
 function willYouMarryMe(/* isPositiveAnswer */) {
   throw new Error('Not implemented');
+  // const p1 = willYouMarryMe(true);
+  // p1.then(isPositiveAnswer => console.log(isPositiveAnswer));
 }
 
 

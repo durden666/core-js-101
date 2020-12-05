@@ -37,13 +37,6 @@ function findElement(arr, value) {
  */
 function generateOdds(/* len */) {
   throw new Error('Not implemented');
-  // const odds = [];
-  // for (let i = 0; i < len * 2; i += 1) {
-  //   if (i % 2 !== 0) {
-  //     odds.push(i);
-  //   }
-  // }
-  // return odds;
 }
 
 
@@ -255,8 +248,8 @@ function getMovingSum(/* arr */) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  return arr.filter((x, i) => i % 2 === 1);
 }
 
 
