@@ -175,8 +175,14 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  for (let i = 0; i < str.length; i += 1) {
+    const newStr = str[i];
+    if (str.indexOf(newStr) === i && str.indexOf(newStr, i + 1) === -1) {
+      return newStr;
+    }
+  }
+  return '' || null;
 }
 
 
@@ -306,8 +312,24 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
+function isBracketsBalanced(str) {
+  const brackets = {
+    '(': ')',
+    '[': ']',
+    '{': '}',
+    '<': '>',
+  };
+  const stack = [];
+
+  for (let i = 0; i < str.length; i += 1) {
+    const item = str[i];
+    if (brackets[item]) {
+      stack.push(brackets[item]);
+    } else if (item !== stack.pop()) {
+      return false;
+    }
+  }
+  return stack.length === 0;
 }
 
 
@@ -315,7 +337,7 @@ function isBracketsBalanced(/* str */) {
  * Returns the string with n-ary (binary, ternary, etc, where n <= 10)
  * representation of specified number.
  * See more about
- * https://en.wikipedia.org/wiki/Binary_number
+ * https://en.wikipedia.or  g/wiki/Binary_number
  * https://en.wikipedia.org/wiki/Ternary_numeral_system
  * https://en.wikipedia.org/wiki/Radix
  *
